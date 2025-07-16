@@ -1,0 +1,34 @@
+Problem 2 : Bench-Based Student Seating
+You are managing seating arrangements for an exam. The exam hall has a row of n seats, divided evenly
+into b benches. Each bench contains exactly n
+b
+seats. Some seats are already occupied by students of two
+types, each having specific restrictions. Additionally, you are tasked with seating new students of a third
+type.
+You are given:
+• An integer n — total number of seats.
+• An integer b — number of benches.
+• An integer array seats of size n, where:
+– seats[i] = 1 means the seat is occupied by a type 1 student, who blocks the seat to their right
+within the same bench.
+– seats[i] = 2 means the seat is occupied by a type 2 student, who blocks the seats to their left
+and right within the same bench.
+– seats[i] = 0 means the seat is empty.
+• An integer m — number of new students of type 3 that you need to seat.
+Type 3 students have no personal restrictions. However, they cannot be seated in any position that
+violates the blocking rules of type 1 or type 2 students.
+Return true if it is possible to seat all m type 3 students following the restrictions. Otherwise, return
+false.
+Now, you are required to place m new students of type 3 in the empty seats, such that:
+• Type 3 students can be seated in any empty seat that is not blocked by restrictions of neighboring
+type 1 or type 2 students within the same bench.
+• There is no restriction that prevents students from sitting adjacent across bench boundaries. Restrictions apply only within individual benches.
+Your task is to determine whether it is possible to place all m new students following the rules above.
+Input
+• An integer n — total number of seats.
+• An integer b — number of benches in the classroom. (n mod b = 0)
+• An array seats of length n — the current seating configuration.
+• An integer m — the number of new students to be seated.
+4
+Output
+true if it is possible to place all m new students according to the given rules; otherwise, false.

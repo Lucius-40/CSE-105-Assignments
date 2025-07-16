@@ -1,0 +1,62 @@
+Task Allocation among Employees
+You are given a list of tasks, each having a certain amount of workload. The goal is to allocate all the
+tasks to a given number of employees. Each task must be assigned to exactly one employee, and the tasks
+assigned to an employee must form a contiguous segment of the original list.
+Each employee must be assigned at least one task.
+The objective is to minimize the maximum total workload assigned to any single employee.
+Input:
+• The first line contains two integers n and k — the number of tasks and the number of employees, respectively. (1 ≤ k, n ≤ 105
+)
+• The second line contains n integers, where the i-th integer denotes the workload of the i-th task. (1 ≤
+workload ≤ 109
+)
+Output:
+• Output a single integer — the minimum possible value of the maximum workload assigned to any employee.
+• If it is not possible to allocate all tasks to the given number of employees according to the rules, output
+−1.
+Constraints:
+• Each employee must get at least one task.
+• Tasks assigned to an employee must be contiguous in the original list.
+• The order of tasks cannot be changed.
+• You must use a divide and conquer based algorithm. Otherwise, your solution will not be accepted.
+
+Examples:
+
+1
+Example 1:
+• Input:
+5 2
+10 20 30 40 50
+• Output:
+90
+• Explanation:
+One optimal way is to allocate:
+– Employee 1: Tasks [10, 20, 30] — total workload = 60
+– Employee 2: Tasks [40, 50] — total workload = 90
+The maximum workload among all employees is 90, which is minimized.
+Other splits like [10, 20] and [30, 40, 50] would lead to a maximum workload of 120, which is worse.
+
+
+Example 2:
+• Input:
+4 5
+5 10 15 20
+• Output:
+-1
+• Explanation:
+There are only 4 tasks but 5 employees. It is impossible to allocate at least one task to each employee.
+
+
+Example 3:
+• Input:
+6 3
+5 10 15 20 25 30
+• Output:
+2
+45
+• Explanation:
+One possible allocation:
+– Employee 1: [5, 10, 15] — total = 30
+– Employee 2: [20, 25] — total = 45
+– Employee 3: [30] — total = 30
+Maximum workload is 45, which is minimized
