@@ -19,7 +19,7 @@ int main(){
                 count_blocked ++ ; 
         }
         else if(seating[i] == 2){
-            if((i+1) < n and (i+1)%(n/b)!= 0)
+            if((i+1) < n and (i+1)%(n/b)!= 0 and seating[i+1]==0)
                 count_blocked ++ ;
             if((i-1) > 0 and (i-1)%(n/b)!= ((n/b)-1) and seating[i-1]==0)
                 count_blocked ++ ;
@@ -27,8 +27,8 @@ int main(){
     }
 
     int ans = count_free - count_blocked ;
-    if( ans >= m)cout <<"True\n";
-    else cout <<"False\n";
+    if( ans >= m)cout <<"Answer : True\n";
+    else cout <<"Answer: False\n";
 
     
 
